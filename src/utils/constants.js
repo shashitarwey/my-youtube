@@ -9,3 +9,7 @@ export const YOUTUBE_LOGO =
 
 export const USER_ICON =
   'https://static.vecteezy.com/system/resources/previews/019/879/186/non_2x/user-icon-on-transparent-background-free-png.png';
+
+const GOOGLE_API_KEY = 'AIzaSyAYIAxCgyMDqGic2MKlM0WPr1SOeD6coWM';
+export const YOUTUBE_API_VIDEOS =
+  'https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&maxResults=50&chart=mostPopular&regionCode=IN&key='+GOOGLE_API_KEY;

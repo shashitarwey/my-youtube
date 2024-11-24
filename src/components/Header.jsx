@@ -1,10 +1,22 @@
+import { useDispatch } from 'react-redux';
+import { toggleMenu } from '../utils/appSlice';
 import { HAMBURGER_ICON, YOUTUBE_LOGO, USER_ICON } from '../utils/constants';
 
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const toggleMenuHandler = () => {
+    dispatch(toggleMenu());
+  };
   return (
     <div className="grid grid-flow-col p-4 m-2 shadow-lg">
       <div className="flex col-span-1">
-        <img className="h-10 cursor-pointer" src={HAMBURGER_ICON} alt="menu" />
+        <img
+          onClick={() => toggleMenuHandler()}
+          className="h-10 cursor-pointer"
+          src={HAMBURGER_ICON}
+          alt="menu"
+        />
         <img
           className="h-10 cursor-pointer rounded-sm mx-2"
           src={YOUTUBE_LOGO}
@@ -22,7 +34,11 @@ const Header = () => {
         </button>
       </div>
       <div className="col-span-1">
-        <img src={USER_ICON} className="h-10 px-4 cursor-pointer" alt="user-icon" />
+        <img
+          src={USER_ICON}
+          className="h-10 px-4 cursor-pointer"
+          alt="user-icon"
+        />
       </div>
     </div>
   );
